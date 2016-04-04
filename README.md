@@ -1,4 +1,8 @@
 # react-youtube-autocomplete
+An auto-suggest search box for React apps built on top of Youtube.
+
+I like to build apps on top of Youtube.  Sometimes you need to let users search for videos on Youtube within your app.
+Just drop this component into your Youtube-friendly React.js app and you'll get a full functional auto-suggest-enabled search box.
 
 ## Installation
 
