@@ -21,7 +21,8 @@ let Demo = React.createClass({
       <p className="tagline">An auto-suggest search box for Youtube apps built with React</p>
       <br />
       <br />
-      <div>Demo</div>
+      <em>Demo</em>
+      <br />
       <br />
       <Component
 				apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
