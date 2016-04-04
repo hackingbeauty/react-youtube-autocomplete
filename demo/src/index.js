@@ -9,13 +9,20 @@ let Demo = React.createClass({
 
 	showResults(results) {
 		console.log('the results are: ', results);
-    alert('got results');
 	},
 
   render() {
     return <div className="container">
-      <h1 className="title">react-youtube-autocomplete</h1>
+      <div className="title">
+        <div className="youtube-icon"></div>
+        <h1>react-youtube-autocomplete</h1>
+        <div className="react-icon"></div>
+      </div>
       <p className="tagline">An auto-suggest search box for Youtube apps built with React</p>
+      <br />
+      <br />
+      <div>Demo</div>
+      <br />
       <Component
 				apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
 				maxResults='20'
