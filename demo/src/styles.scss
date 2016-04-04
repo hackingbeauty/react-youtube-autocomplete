@@ -50,10 +50,15 @@
 /* base styles */
 /* ----------- */
 
+// * {
+//   border: 1px solid red
+// }
+
 html {
   background-color: white;
   font: normal normal normal 18px/1.2 "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   color: #292f33;
+  padding-top: 40px;
 }
 
 .container {
@@ -64,9 +69,10 @@ html {
 
 h1 {
   color: #00bcd4;
+  margin: 0;
 }
 
-h1,
+.headline,
 .youtube-icon,
 .react-icon {
   display: inline-block;
@@ -74,7 +80,7 @@ h1,
 
 .youtube-icon {
   position: relative;
-  top: 32px;
+  top: 10px;
   height: 88px;
   width: 126px;
   display: inline-block;
@@ -86,7 +92,7 @@ h1,
 
 .react-icon {
   position: relative;
-  top: 32px;
+  top: 10px;
   height: 88px;
   width: 94px;
   margin-left: 80px;

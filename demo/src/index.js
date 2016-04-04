@@ -15,10 +15,12 @@ let Demo = React.createClass({
     return <div className="container">
       <div className="title">
         <div className="youtube-icon"></div>
-        <h1>react-youtube-autocomplete</h1>
+        <div className="headline">
+          <h1>react-youtube-autocomplete</h1>
+          <p className="tagline">An auto-suggest search box for Youtube apps built with React</p>
+        </div>
         <div className="react-icon"></div>
       </div>
-      <p className="tagline">An auto-suggest search box for Youtube apps built with React</p>
       <br />
       <br />
       <em>Demo</em>
