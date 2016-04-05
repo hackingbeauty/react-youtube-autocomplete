@@ -5,9 +5,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Component from '../../src'
 
-injectTapEventPlugin();
+injectTapEventPlugin()
 
-require('./styles.scss');
+// require('./styles.scss')
 
 let Demo = React.createClass({
 
@@ -41,6 +41,8 @@ let Demo = React.createClass({
   },
 
   onRequestClose() {
+    console.log('Close The Welcome Dialog.');
+    this.setState({open: false});
   },
 
   render() {
@@ -94,7 +96,6 @@ let Demo = React.createClass({
       <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="111px" height="30px"></iframe>
       <Dialog
         title="Search Results from Youtube"
-        modal={true}
         open={this.state.open}
         onRequestClose={this.onRequestClose}
         autoScrollBodyContent={true}>
