@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 
 import Component from '../../src'
 
-// require('./styles.scss');
+require('./styles.scss');
 
 let Demo = React.createClass({
 
