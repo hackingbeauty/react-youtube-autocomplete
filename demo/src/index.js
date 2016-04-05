@@ -1,17 +1,53 @@
 import React from 'react'
 import {render} from 'react-dom'
+import { Dialog } from 'material-ui'
 
 import Component from '../../src'
 
-require('./styles.scss');
+// require('./styles.scss');
 
 let Demo = React.createClass({
 
-	showResults(results) {
-		console.log('the results are: ', results);
+  getInitialState() {
+    return {
+      open: false,
+      searchResults : []
+    }
+  },
+
+  getFormattedResults(searchResults) {
+    return searchResults.map(function(result) {
+      return <li key={result.id.videoId} className="search-result">
+        <a href={`http://youtube.com/watch?v=${result.id.videoId}`}>
+          <img src={result.snippet.thumbnails.default.url} alt={result.snippet.title} />
+          <span>{result.snippet.title}</span>
+        </a>
+      </li>
+    });
+  },
+
+	showResults(searchResults) {
+    this.setState({
+      open          : true,
+      searchResults : searchResults
+    })
 	},
 
+  handleClose() {
+    this.setState({open: false});
+  },
+
+  onRequestClose() {
+  },
+
   render() {
+    var searchResults = this.state.searchResults;
+    var formattedResults;
+
+    if(searchResults) {
+      formattedResults = this.getFormattedResults(searchResults);
+    }
+
     return <div className="container">
       <div className="title">
         <div className="youtube-icon"></div>
@@ -23,6 +59,7 @@ let Demo = React.createClass({
       </div>
       <br />
       <br />
+      <br />
       <em>Demo</em>
       <br />
       <br />
@@ -32,8 +69,10 @@ let Demo = React.createClass({
   				maxResults='20'
   				callback={this.showResults}
           placeHolder='Search Youtube'
-          className="my-class-name"
-        />
+          className="my-class-name" />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -50,6 +89,16 @@ let Demo = React.createClass({
       </div>
       <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=fork&count=true&size=large" frameBorder="0" scrolling="0" width="114px" height="30px"></iframe>
       <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="111px" height="30px"></iframe>
+      <Dialog
+        title="Search Results from Youtube"
+        modal={true}
+        open={this.state.open}
+        onRequestClose={this.onRequestClose}
+        autoScrollBodyContent={true}>
+        <ul id="search-result-list">
+          {formattedResults}
+        </ul>
+      </Dialog>
     </div>
   }
 })
