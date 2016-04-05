@@ -1,10 +1,13 @@
 import React from 'react'
 import {render} from 'react-dom'
 import { Dialog } from 'material-ui'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Component from '../../src'
 
-// require('./styles.scss');
+injectTapEventPlugin();
+
+require('./styles.scss');
 
 let Demo = React.createClass({
 
