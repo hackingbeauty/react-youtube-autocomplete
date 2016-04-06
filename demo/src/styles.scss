@@ -90,11 +90,15 @@ li {
   margin:0px;
 }
 
-iframe {
-  margin-left: 20px;
+#github-links {
   position: relative;
-  top: 10px;
+  top: 9px;
   display:inline-block;
+}
+
+iframe {
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 footer {
@@ -170,4 +174,12 @@ footer {
   display: inline-block;
   color: black;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+
+  #github-links {
+    display: block;
+  }
+
 }
