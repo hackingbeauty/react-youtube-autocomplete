@@ -23,10 +23,11 @@ See this [compenent in action](http://hackingbeauty.com/react-youtube-autocomple
 
 ```js
 <YoutubeAutocomplete
-	id={string}            // defaults -> #youtubeSearchBox
+  apiKey={string}        // you must get an API key from google if you want video search results returned
+  maxResults={string}    // defaults -> 50. Number of video search results you want
 	placeHolder={string}   // defaults -> "Search Youtube"
 	className={string}     // defaults -> random string
-	callback={function}    // callback to execute when search result is selected
+	callback={function}    // callback to execute when search results are retrieved
 />
 ```
 
@@ -39,6 +40,7 @@ class Example extends React.Component {
   render() {
     return (
       <YouTubeAutocomplete
+        apiKey="AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4"
         placeHolder="Search Youtube"
         callback= this._onSearchResultsFound
       />
