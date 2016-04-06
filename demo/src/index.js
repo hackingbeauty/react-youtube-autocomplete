@@ -2,6 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import { Dialog } from 'material-ui'
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Code from 'react-embed-code';
 
 import Component from '../../src'
 
@@ -9,7 +10,65 @@ injectTapEventPlugin()
 
 require('./styles.scss')
 
-let Demo = React.createClass({
+const cssDownload = `
+.react-typeahead-options {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid #ccc;
+  cursor: default;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+}
+
+.react-typeahead-options {
+  margin-left: -8px;
+}
+
+.react-typeahead-options li[role="option"] {
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.react-typeahead-options li[role="option"][aria-selected="true"] {
+  background: #00bcd4;
+  color: white;
+  font-weight: bold;
+}
+
+.react-typeahead-container {
+  border: 1px solid #024e6a;
+  padding: 5px 8px;
+  border-radius: 0px;
+  background-color: white;
+  margin: 0 auto
+}
+
+.react-typeahead-input {
+  position: relative;
+  background: white;
+  outline: none;
+  width: 100%;
+  font-size: 24px;
+  line-height: 30px;
+  border: none;
+}
+`;
+
+const componentEmbed = `
+import YoutubeAutocomplete from 'react-youtube-autocomplete';
+
+<YoutubeAutocomplete
+  apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
+  maxResults='20'
+  callback={yourCallback}
+  placeHolder='Search Youtube'
+/>
+`;
+
+const Demo = React.createClass({
 
   getInitialState() {
     return {
@@ -53,45 +112,66 @@ let Demo = React.createClass({
       formattedResults = this.getFormattedResults(searchResults);
     }
 
-    return <div className="container">
-      <div className="title">
-        <div className="youtube-icon"></div>
-        <div className="react-icon"></div>
-        <div className="headline">
-          <h1>react-youtube-autocomplete</h1>
-          <p className="tagline">A React-based auto-suggest search box for Youtube apps</p>
+    return <div>
+      <div className="container">
+        <div className="title">
+          <div className="youtube-icon"></div>
+          <div className="react-icon"></div>
+          <div className="headline">
+            <h1>react-youtube-autocomplete</h1>
+            <p className="tagline">A React-based auto-suggest search box for Youtube apps</p>
+          </div>
+          <div id="project-link">
+            <a href="https://github.com/hackingbeauty/react-youtube-autocomplete">Project & Docs on Github</a>
+            <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=fork&count=true&size=large" frameBorder="0" scrolling="0" width="114px" height="30px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="111px" height="30px"></iframe>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="main">
+          <em>Demo</em>
+          <br />
+          <br />
+          <div id="demo-box">
+            <Component
+      				apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
+      				maxResults='20'
+      				callback={this.showResults}
+              placeHolder='Search Youtube'
+              className="my-class-name" />
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <em>Step 1 - NPM install</em>
+          <br />
+          <br />
+          <div className="code-snippet">npm install --save react-youtube-autocomplete</div>
+          <br />
+          <br />
+          <em>Step 2 - Embed component</em>
+          <br />
+          <br />
+          <div className="code-snippet text-left">
+            <Code embed={componentEmbed} />
+          </div>
+          <br />
+          <br />
+          <em>Step 3 - Download base styles</em>
+          <br />
+          <br />
+          <div className="code-snippet text-left smaller-text">
+            <Code embed={cssDownload} />
+          </div>
+          <br />
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <em>Demo</em>
-      <br />
-      <br />
-      <div id="main">
-        <Component
-  				apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
-  				maxResults='20'
-  				callback={this.showResults}
-          placeHolder='Search Youtube'
-          className="my-class-name" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <em>Install</em>
-        <br />
-        <br />
-        <div className="code-snippet">npm install --save react-youtube-autocomplete</div>
-        <br />
-        <br />
-        <br />
-        <a href="https://github.com/hackingbeauty/react-youtube-autocomplete">Project & Docs on Github</a>
-        <br />
-        <br />
-      </div>
-      <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=fork&count=true&size=large" frameBorder="0" scrolling="0" width="114px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=hackingbeauty&repo=react-youtube-autocomplete&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="111px" height="30px"></iframe>
+      <footer>
+        &copy; 2016 Hacking Beauty - <a href="http://hackingbeauty.com">www.hackingbeauty.com</a>
+      </footer>
       <Dialog
         title="Search Results from Youtube"
         open={this.state.open}

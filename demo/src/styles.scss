@@ -50,11 +50,13 @@
 /* ----------- */
 
 
-html {
+html,
+body {
   background-color: white;
   font: normal normal normal 18px/1.2 "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   color: #292f33;
   padding-top: 20px;
+  margin: 0;
 }
 
 .container {
@@ -64,7 +66,13 @@ html {
 }
 
 #main {
-  max-width: 450px;
+  max-width: 700px;
+  margin:0 auto;
+  padding: 20px;
+}
+
+#demo-box {
+  max-width: 490px;
   margin:0 auto;
 }
 
@@ -83,7 +91,24 @@ li {
 }
 
 iframe {
-  margin: 0 10px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  display:inline-block;
+}
+
+footer {
+  padding:30px;
+  border-top: 1px solid #dddddd;
+  background: #efefef;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.smaller-text {
+  font-size: 16px;
 }
 
 .headline {
