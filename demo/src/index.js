@@ -119,7 +119,7 @@ const Demo = React.createClass({
           <div className="react-icon"></div>
           <div className="headline">
             <h1>react-youtube-autocomplete</h1>
-            <p className="tagline">A React-based auto-suggest search box for Youtube apps</p>
+            <p className="tagline">A responsive & React-based auto-suggest search box for Youtube apps</p>
           </div>
           <div id="project-link">
             <a href="https://github.com/hackingbeauty/react-youtube-autocomplete">Project & Docs on Github</a>

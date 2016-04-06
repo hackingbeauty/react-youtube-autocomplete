@@ -149,6 +149,7 @@ footer {
 
 #search-result-list {
   display: inline-block;
+  padding-left:0px;
 }
 
 .search-result {
@@ -174,6 +175,21 @@ footer {
   display: inline-block;
   color: black;
   overflow: hidden;
+}
+
+
+@media only screen and (max-width: 1012px) {
+  .search-result {
+    width: 29%;
+    height: 168px
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  .search-result {
+    width: 100%;
+    height: 100px
+  }
 }
 
 @media only screen and (max-width: 500px) {
