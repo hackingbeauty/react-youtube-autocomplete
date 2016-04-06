@@ -7,7 +7,7 @@ import Component from '../../src'
 
 injectTapEventPlugin()
 
-// require('./styles.scss')
+require('./styles.scss')
 
 let Demo = React.createClass({
 
@@ -56,11 +56,11 @@ let Demo = React.createClass({
     return <div className="container">
       <div className="title">
         <div className="youtube-icon"></div>
+        <div className="react-icon"></div>
         <div className="headline">
           <h1>react-youtube-autocomplete</h1>
           <p className="tagline">A React-based auto-suggest search box for Youtube apps</p>
         </div>
-        <div className="react-icon"></div>
       </div>
       <br />
       <br />
@@ -75,8 +75,6 @@ let Demo = React.createClass({
   				callback={this.showResults}
           placeHolder='Search Youtube'
           className="my-class-name" />
-        <br />
-        <br />
         <br />
         <br />
         <br />
