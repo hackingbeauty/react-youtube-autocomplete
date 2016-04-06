@@ -25,9 +25,9 @@ See this [compenent in action](http://hackingbeauty.com/react-youtube-autocomple
 <YoutubeAutocomplete
   apiKey={string}        // you must get an API key from google if you want video search results returned
   maxResults={string}    // defaults -> 50. Number of video search results you want
-	placeHolder={string}   // defaults -> "Search Youtube"
-	className={string}     // defaults -> random string
-	callback={function}    // callback to execute when search results are retrieved
+  placeHolder={string}   // defaults -> "Search Youtube"
+  callback={function}    // callback to execute when search results are retrieved
+  className={string}     // defaults -> random string
 />
 ```
 

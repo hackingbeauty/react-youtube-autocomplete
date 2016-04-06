@@ -63,8 +63,8 @@ import YoutubeAutocomplete from 'react-youtube-autocomplete';
 <YoutubeAutocomplete
   apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
   maxResults='20'
-  callback={yourCallback}
   placeHolder='Search Youtube'
+  callback={yourCallback}
 />
 `;
 
