@@ -10,7 +10,7 @@ See this [compenent in action](http://hackingbeauty.com/react-youtube-autocomple
 
 ## Installation
 
-`npm install react-youtube-autocomplete --save`
+`npm install --save react-youtube-autocomplete`
 
 ## Features
 
