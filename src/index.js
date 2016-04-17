@@ -4,7 +4,7 @@ import JSONP from 'jsonp';
 import OptionsTemplate from './OptionsTemplate';
 import YTSearch from 'youtube-search-api';
 
-const googleAutoSuggestURL = 'http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
+const googleAutoSuggestURL = '//suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
 
 class YoutubeAutocomplete extends Component {
 
