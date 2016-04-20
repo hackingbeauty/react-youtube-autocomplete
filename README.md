@@ -40,7 +40,7 @@ class Example extends React.Component {
   render() {
     return (
       <YouTubeAutocomplete
-        apiKey="AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4"
+        apiKey="YOUR-API-KEY-THAT-YOUR-REGISTERED-WITH-GOOGLE"
         placeHolder="Search Youtube"
         callback= this._onSearchResultsFound
       />
