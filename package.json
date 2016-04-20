@@ -1,8 +1,10 @@
 {
   "name": "react-youtube-autocomplete",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A responsive & React-based auto-suggest search box for Youtube apps",
-  "keywords": ["react-component"],
+  "keywords": [
+    "react-component"
+  ],
   "main": "lib/index.js",
   "jsnext:main": "es6/index.js",
   "files": [
@@ -37,8 +39,5 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "https://github.com/hackingbeauty/react-youtube-autocomplete",
-  "keywords": [
-    "react-component"
-  ]
+  "repository": "https://github.com/hackingbeauty/react-youtube-autocomplete"
 }
