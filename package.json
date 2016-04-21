@@ -22,8 +22,8 @@
   "dependencies": {
     "jsonp": "^0.2.0",
     "material-ui": "^0.15.0-alpha.2",
-    "react-typeahead-component": "^0.9.0",
-    "youtube-search-api": "^0.5.3"
+    "youtube-search-api": "^0.5.3",
+    "react-typeahead-component": "hackingbeauty/react-typeahead-component#production"
   },
   "peerDependencies": {
     "react": "0.14.x"
