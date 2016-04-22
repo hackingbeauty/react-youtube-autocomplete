@@ -1,74 +1,81 @@
-import React from 'react'
-import {render} from 'react-dom'
-import { Dialog } from 'material-ui'
+import React, { PropTypes } from 'react';
+import {render} from 'react-dom';
+import { Dialog } from 'material-ui';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Code from 'react-embed-code';
 
-import Component from '../../src'
+import Component from '../../src';
 
-injectTapEventPlugin()
+injectTapEventPlugin();
 
-// require('./styles.scss')
+// require('./styles.scss');
 
 const cssDownload = `
-.react-typeahead-options {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  border: 1px solid #ccc;
-  cursor: default;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  width: 100%;
-}
+  .react-typeahead-options {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #ccc;
+    cursor: default;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+  }
 
-.react-typeahead-options {
-  margin-left: -8px;
-}
+  .react-typeahead-options {
+    margin-left: -8px;
+  }
 
-.react-typeahead-options li[role="option"] {
-  padding: 5px;
-  text-align: left;
-  cursor: pointer;
-}
+  .react-typeahead-options li[role="option"] {
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+  }
 
-.react-typeahead-options li[role="option"][aria-selected="true"] {
-  background: #00bcd4;
-  color: white;
-  font-weight: bold;
-}
+  .react-typeahead-options li[role="option"][aria-selected="true"] {
+    background: #00bcd4;
+    color: white;
+    font-weight: bold;
+  }
 
-.react-typeahead-container {
-  border: 1px solid #024e6a;
-  padding: 5px 8px;
-  border-radius: 0px;
-  background-color: white;
-  margin: 0 auto
-}
+  .react-typeahead-container {
+    border: 1px solid #024e6a;
+    padding: 5px 8px;
+    border-radius: 0px;
+    background-color: white;
+    margin: 0 auto
+  }
 
-.react-typeahead-input {
-  position: relative;
-  background: white;
-  outline: none;
-  width: 100%;
-  font-size: 24px;
-  line-height: 30px;
-  border: none;
-}
+  .react-typeahead-input {
+    position: relative;
+    background: white;
+    outline: none;
+    width: 100%;
+    font-size: 24px;
+    line-height: 30px;
+    border: none;
+  }
 `;
 
 const componentEmbed = `
-import YoutubeAutocomplete from 'react-youtube-autocomplete';
+  import YoutubeAutocomplete from 'react-youtube-autocomplete';
 
-<YoutubeAutocomplete
-  apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
-  maxResults='20'
-  placeHolder='Search Youtube'
-  callback={yourCallback}
-/>
+  <YoutubeAutocomplete
+    apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
+    maxResults='20'
+    placeHolder='Search Youtube'
+    callback={yourCallback} />
 `;
 
 const Demo = React.createClass({
+  childContextTypes:{
+    muiTheme: React.PropTypes.object.isRequired,
+  },
+
+  getChildContext() {
+    return {muiTheme: getMuiTheme()};
+  },
 
   getInitialState() {
     return {
@@ -100,7 +107,6 @@ const Demo = React.createClass({
   },
 
   onRequestClose() {
-    console.log('Close The Welcome Dialog.');
     this.setState({open: false});
   },
 
