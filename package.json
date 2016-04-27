@@ -22,11 +22,11 @@
   "dependencies": {
     "jsonp": "^0.2.0",
     "react-typeahead-component": "hackingbeauty/react-typeahead-component#production",
-    "material-ui": "0.14.4",
     "youtube-finder": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "0.14.x"
+    "react": "0.14.x",
+    "react-dom": "0.14.x"
   },
   "devDependencies": {
     "nwb": "0.7.x",
