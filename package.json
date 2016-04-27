@@ -1,6 +1,6 @@
 {
   "name": "react-youtube-autocomplete",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A responsive & React-based auto-suggest search box for Youtube apps",
   "keywords": [
     "react-component"
