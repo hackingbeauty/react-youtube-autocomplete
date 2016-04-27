@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "react": "0.14.x",
-    "react-dom": "0.14.x"
+    "react-dom": "0.14.8"
   },
   "devDependencies": {
     "nwb": "0.7.x",
