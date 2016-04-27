@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import {render} from 'react-dom';
 import { Dialog } from 'material-ui';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Code from 'react-embed-code';
 
@@ -9,7 +8,7 @@ import Component from '../../src';
 
 injectTapEventPlugin();
 
-// require('./styles.scss');
+require('./styles.scss');
 
 const cssDownload = `
   .react-typeahead-options {
@@ -69,14 +68,6 @@ const componentEmbed = `
 `;
 
 const Demo = React.createClass({
-  childContextTypes:{
-    muiTheme: React.PropTypes.object.isRequired,
-  },
-
-  getChildContext() {
-    return {muiTheme: getMuiTheme()};
-  },
-
   getInitialState() {
     return {
       open: false,
