@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Typeahead from 'react-typeahead-component';
 import JSONP from 'jsonp';
 import OptionsTemplate from './OptionsTemplate';
-import YTSearch from 'youtube-search-api';
+import YoutubeFinder from 'youtube-finder';
 
 const googleAutoSuggestURL = '//suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
 
@@ -55,14 +55,22 @@ class YoutubeAutocomplete extends Component {
   }
 
   onDropDownClose(event) {
-    var self        = this;
-    var searchTerm = this.state.inputValue;
-    var apiKey      = this.props.apiKey;
-    var maxResults  = this.props.maxResults ? this.props.maxResults : '50';
+    var self          = this;
+    var searchTerm    = this.state.inputValue;
+    var maxResults    = this.props.maxResults <= 50 ? this.props.maxResults : '50';
+    var YoutubeClient = YoutubeFinder.createClient({ key: this.props.apiKey });
+    var params        = {
+      part        : 'id,snippet',
+      type        : 'video',
+      q           : searchTerm,
+      maxResults  : maxResults
+    }
 
-    YTSearch({ key: apiKey, term: searchTerm, max: maxResults }, function(results) {
-      self.props.callback(results);
+    YoutubeClient.search(params, function(error,results){
+      if(error) return console.log(error);
+      self.props.callback(results.items);
     });
+
   }
 
   render() {

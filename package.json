@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "jsonp": "^0.2.0",
-    "youtube-search-api": "^0.5.3",
     "react-typeahead-component": "hackingbeauty/react-typeahead-component#production",
-    "material-ui":"0.14.4"
+    "material-ui": "0.14.4",
+    "youtube-finder": "^1.0.0"
   },
   "peerDependencies": {
     "react": "0.14.x"
