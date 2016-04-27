@@ -8,7 +8,7 @@ import Component from '../../src';
 
 injectTapEventPlugin();
 
-require('./styles.scss');
+// require('./styles.scss');
 
 const cssDownload = `
   .react-typeahead-options {
