@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Typeahead from 'react-typeahead-component';
+import Typeahead from 'react-typeahead-component2';
 import JSONP from 'jsonp';
 import OptionsTemplate from './OptionsTemplate';
 import YoutubeFinder from 'youtube-finder';
