@@ -6,6 +6,8 @@ import YoutubeFinder from 'youtube-finder';
 
 const googleAutoSuggestURL = '//suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
 
+require('./styles.scss');
+
 class YoutubeAutocomplete extends Component {
 
   constructor(props) {
@@ -16,9 +18,10 @@ class YoutubeAutocomplete extends Component {
   }
 
   handleChange(event) {
-    var self = this,
-        query = event.target.value,
-        url = googleAutoSuggestURL + query;
+    const
+      self = this,
+      query = event.target.value,
+      url = googleAutoSuggestURL + query;
 
     this.setState({
       inputValue: query
@@ -28,7 +31,7 @@ class YoutubeAutocomplete extends Component {
       if (error) {
         console.log(error);
       } else {
-        var searchResults = data[1];
+        const searchResults = data[1];
         self.setState({
           options: searchResults
         });
@@ -37,17 +40,18 @@ class YoutubeAutocomplete extends Component {
 	}
 
   onClick(event, optionData) {
-    var searchTerm = optionData[0];
+    const searchTerm = optionData[0];
     this.setState({
       inputValue: searchTerm
     });
   }
 
   onOptionChange(event, optionData, index) {
-    var self = this;
-    var searchTerm  = optionData[0];
-    var apiKey      = this.props.apiKey;
-    var maxResults  = this.props.maxResults ? this.props.maxResults : '50';
+    const
+      self = this,
+      searchTerm  = optionData[0],
+      apiKey      = this.props.apiKey,
+      maxResults  = this.props.maxResults ? this.props.maxResults : '50';
 
     this.setState({
       inputValue: searchTerm
@@ -55,16 +59,17 @@ class YoutubeAutocomplete extends Component {
   }
 
   onDropDownClose(event) {
-    var self          = this;
-    var searchTerm    = this.state.inputValue;
-    var maxResults    = this.props.maxResults <= 50 ? this.props.maxResults : '50';
-    var YoutubeClient = YoutubeFinder.createClient({ key: this.props.apiKey });
-    var params        = {
-      part        : 'id,snippet',
-      type        : 'video',
-      q           : searchTerm,
-      maxResults  : maxResults
-    }
+    const
+      self          = this,
+      searchTerm    = this.state.inputValue,
+      maxResults    = this.props.maxResults <= 50 ? this.props.maxResults : '50',
+      YoutubeClient = YoutubeFinder.createClient({ key: this.props.apiKey }),
+        params        = {
+        part        : 'id,snippet',
+        type        : 'video',
+        q           : searchTerm,
+        maxResults  : maxResults
+      };
 
     YoutubeClient.search(params, function(error,results){
       if(error) return console.log(error);
