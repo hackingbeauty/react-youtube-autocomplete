@@ -6,8 +6,6 @@ import YoutubeFinder from 'youtube-finder';
 
 const googleAutoSuggestURL = '//suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=';
 
-require('./styles.scss');
-
 class YoutubeAutocomplete extends Component {
 
   constructor(props) {
