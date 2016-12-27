@@ -69,6 +69,10 @@ class YoutubeAutocomplete extends Component {
         maxResults  : maxResults
       };
 
+      if(this.props.videoCategoryId) {
+        params.videoCategoryId = this.props.videoCategoryId;
+      }
+
     YoutubeClient.search(params, function(error,results){
       if(error) return console.log(error);
       self.props.callback(results.items);
