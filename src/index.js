@@ -35,7 +35,7 @@ class YoutubeAutocomplete extends Component {
         });
       }
     });
-	}
+    }
 
   onClick(event, optionData) {
     const searchTerm = optionData[0];
@@ -62,7 +62,7 @@ class YoutubeAutocomplete extends Component {
       searchTerm    = this.state.inputValue,
       maxResults    = this.props.maxResults <= 50 ? this.props.maxResults : '50',
       YoutubeClient = YoutubeFinder.createClient({ key: this.props.apiKey }),
-        params        = {
+      params        = {
         part        : 'id,snippet',
         type        : 'video',
         q           : searchTerm,
@@ -82,10 +82,10 @@ class YoutubeAutocomplete extends Component {
     // this is why you have to do onChange={this.handleChange.bind(this)}
     return <div>
       <Typeahead
-      	inputValue={this.state.inputValue}
-      	placeholder={this.props.placeHolder}
+        inputValue={this.state.inputValue}
+        placeholder={this.props.placeHolder}
         className={this.props.className}
-      	onChange={this.handleChange.bind(this)}
+        onChange={this.handleChange.bind(this)}
         optionTemplate={OptionsTemplate}
         options={this.state.options}
         onOptionClick={this.onClick.bind(this)}

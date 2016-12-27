@@ -135,9 +135,9 @@ const Demo = React.createClass({
           <br />
           <div id="demo-box">
             <Component
-      				apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
-      				maxResults='20'
-      				callback={this.showResults}
+              apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
+              maxResults='20'
+              callback={this.showResults}
               placeHolder='Search Youtube'
               className="my-class-name" />
           </div>
