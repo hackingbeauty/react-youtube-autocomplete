@@ -63,6 +63,7 @@ const componentEmbed = `
   <YoutubeAutocomplete
     apiKey='AIzaSyAtSE-0lZOKunNlkHt8wDJk9w4GjFL9Fu4'
     maxResults='20'
+    [videoCategoryId='10'] /* Optional. Limit results to given category */
     placeHolder='Search Youtube'
     callback={yourCallback} />
 `;
@@ -157,6 +158,11 @@ const Demo = React.createClass({
           <div className="code-snippet text-left">
             <Code embed={componentEmbed} />
           </div>
+          <br />
+          The <div className="code-snippet-inline">videoCateogoryId</div> parameter is optional. If specified, it will
+          limit the results to the category supplied. See the
+          <a href="https://developers.google.com/youtube/v3/docs/videoCategories/list">Youtube API</a> for more info on
+          the allowable values.
           <br />
           <br />
           <em>Step 3 - Download base styles</em>

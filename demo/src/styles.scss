@@ -147,6 +147,11 @@ footer {
   padding: 10px;
 }
 
+.code-snippet-inline {
+  @extend .code-snippet;
+  display: inline-block;
+}
+
 #search-result-list {
   display: inline-block;
   padding-left:0px;
