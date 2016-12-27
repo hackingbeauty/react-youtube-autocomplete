@@ -18,16 +18,18 @@ See this [compenent in action](http://hackingbeauty.com/react-youtube-autocomple
 - Search Youtube based on text input
 - Retrieve list of results from Youtube
 - Display drop-down list of search results
+- Optionally limit results to specific category 
 
 ## Usage
 
 ```js
 <YoutubeAutocomplete
-  apiKey={string}        // you must get an API key from google if you want video search results returned
-  maxResults={string}    // defaults -> 50. Number of video search results you want
-  placeHolder={string}   // defaults -> "Search Youtube"
-  callback={function}    // callback to execute when search results are retrieved
-  className={string}     // defaults -> random string
+  apiKey={string}          // you must get an API key from google if you want video search results returned
+  maxResults={string}      // defaults -> 50. Number of video search results you want
+  placeHolder={string}     // defaults -> "Search Youtube"
+  videoCategoryId={string} // optional. The video category ID to limit the results to if specified
+  callback={function}      // callback to execute when search results are retrieved
+  className={string}       // defaults -> random string
 />
 ```
 
@@ -42,6 +44,7 @@ class Example extends React.Component {
       <YouTubeAutocomplete
         apiKey="YOUR-API-KEY-THAT-YOUR-REGISTERED-WITH-GOOGLE"
         placeHolder="Search Youtube"
+        videoCategoryId="10" //10 = Music, for example
         callback= this._onSearchResultsFound
       />
     );
