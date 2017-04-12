@@ -17,7 +17,8 @@
     "build": "nwb build",
     "clean": "nwb clean",
     "start": "nwb serve",
-    "test": "nwb test"
+    "test": "nwb test",
+    "deploy": "gh-pages -d demo/dist"
   },
   "dependencies": {
     "jsonp": "^0.2.0",
@@ -29,13 +30,14 @@
     "react-dom": "^15.0.0"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
+    "material-ui": "0.14.4",
     "nwb": "0.7.x",
     "nwb-sass": "^0.5.0",
     "react": "0.14.x",
     "react-dom": "0.14.x",
     "react-embed-code": "^0.1.0",
-    "react-tap-event-plugin": "^0.2.2",
-    "material-ui": "0.14.4"
+    "react-tap-event-plugin": "^0.2.2"
   },
   "author": "",
   "homepage": "",
