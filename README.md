@@ -6,7 +6,7 @@ Just drop this component into your Youtube-friendly React.js app and you'll get 
 
 ## Demo
 
-See this [compenent in action](hackingbeauty.github.io/react-youtube-autocomplete/)
+See this [compenent in action](http://hackingbeauty.github.io/react-youtube-autocomplete/)
 
 ## Installation
 
